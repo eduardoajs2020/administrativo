@@ -1,0 +1,144 @@
+$cliente_id, $valor, $modo_pagamento, $data_vencimento, $data_pagamento 
+
+
+CobrancasController
+
+
+CobrancasDAO.php
+
+
+CobrancasDAOinterface.php
+
+
+
+
+
+<form action="/src/cadastro_cobranca.php" method="post">
+
+    <label for="nome" hidden>id:</label>
+    <input type="text" name="id" value="<?php echo $_POST['id'] ?? ''; ?>" id="id" hidden>
+    
+    <label for="cliente_id">CLIENTE:</label>
+    <input type="text" name="cliente_id" value="<?php echo $_POST['cliente_id'] ?? ''; ?>" id="cliente_id" >
+
+
+    <label for="valor">VALOR:</label>
+    <input type="number" name="valor" value="<?php echo $_POST['valor'] ?? ''; ?>" id="valor" >
+
+    <label for="modo_pagamento">MODALIDADE DE PAGAMENTO:</label>
+    <input type="text" name="modo_pagamento" value="<?php echo $_POST['modo_pagamento'] ?? ''; ?>" id="modo_pagamento" >
+
+    <label for="data_vencimento">VENCIMENTO:</label>
+    <input type="text" name="data_vencimento" value="<?php echo $_POST['data_vencimento'] ?? ''; ?>" id="data_vencimento" >
+
+    <label for="data_pagamento">PAGAMENTO:</label>
+    <input type="text" name="data_pagamento" value="<?php echo $_POST['data_pagamento'] ?? ''; ?>" id="data_pagamento" >
+
+    <br><br>
+    <input class="buttom" name="CadSentenca" type="submit" value="Cadastrar">
+    <input class="buttom" name="AltSentenca" type="submit" value="Alterar">
+    <input class="buttom" name="DelSentenca" type="submit" value="Excluir">
+    <input class="buttom" name="ListaSentenca" type="submit" value="Lista Todos">
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selecionar Modo de Pagamento</title>
+</head>
+<body>
+  <h2>Selecionar Modo de Pagamento</h2>
+  <form id="paymentForm" action="process_payment.php" method="post">
+    <label for="modo_pagamento">Modo de Pagamento:</label><br>
+    <select name="modo_pagamento" id="modo_pagamento">
+      <option value="a_vista">À Vista</option>
+      <option value="a_prazo">À Prazo</option>
+    </select><br><br>
+    <label for="sub_modo_pagamento">Sub Modo de Pagamento:</label><br>
+    <select name="sub_modo_pagamento" id="sub_modo_pagamento">
+
+
+
+      <?php
+        // Sub options based on selected payment mode
+        $subOptions = array(
+          'a_vista' => array('dinheiro', 'cartao_debito', 'boleto', 'pix', 'cash_back'),
+          'a_prazo' => array('cartao_credito', 'boleto', 'cash_back')
+        );
+
+        // Iterate through the sub options and generate the select options
+        foreach ($subOptions['a_vista'] as $option) {
+          echo "<option value='$option'>$option</option>";
+        }
+      ?>
+    </select><br><br>
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selecionar Modo de Pagamento</title>
+</head>
+<body>
+  <h2>Selecionar Modo de Pagamento</h2>
+  <form id="paymentForm" action="process_payment.php" method="post">
+    <label for="modo_pagamento">Modo de Pagamento:</label><br>
+    <select name="modo_pagamento" id="modo_pagamento">
+      <option value="a_vista">À Vista</option>
+      <option value="a_prazo">À Prazo</option>
+    </select><br><br>
+    <label for="sub_modo_pagamento">Sub Modo de Pagamento:</label><br>
+    <select name="sub_modo_pagamento" id="sub_modo_pagamento"></select><br><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    // Access the form element and the sub select element
+    const form = document.getElementById('paymentForm');
+    const subSelect = document.getElementById('sub_modo_pagamento');
+
+    // Payment mode options
+    const paymentOptions = {
+      a_vista: ['dinheiro', 'cartao_debito', 'boleto', 'pix', 'cash_back'],
+      a_prazo: ['cartao_credito', 'boleto', 'cash_back']
+    };
+
+    // Function to update the sub select options based on the selected payment mode
+    function updateSubOptions() {
+      const selectedMode = form.modo_pagamento.value;
+      const subOptions = paymentOptions[selectedMode];
+
+      // Clear previous options
+      subSelect.innerHTML = '';
+
+      // Add new options
+      subOptions.forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.textContent = option;
+        subSelect.appendChild(optionElement);
+      });
+    }
+
+    // Listen for changes in the payment mode select
+    form.modo_pagamento.addEventListener('change', updateSubOptions);
+
+    // Initialize the sub options based on the default selected payment mode
+    updateSubOptions();
+  </script>
+</body>
+</html>
+

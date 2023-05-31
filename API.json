@@ -1,0 +1,69 @@
+{
+  "assets": {
+    "images": {
+      "logo": "/assets/images/logo.png",
+      "background": "/assets/images/background.jpg"
+    },
+    "fonts": {
+      "Roboto": "/assets/fonts/roboto.ttf",
+      "Open Sans": "/assets/fonts/opensans.ttf"
+    }
+  },
+  "css": {
+    "pages": {
+      "index": "/css/index.css",
+      "search": "/css/search.css",
+      "profile": "/css/profile.css"
+    },
+    "images": {
+      "icon-search": "/css/images/icon-search.png",
+      "icon-profile": "/css/images/icon-profile.png"
+    }
+  },
+  "dao": {
+    "user": "userDAO.php",
+    "product": "productDAO.php",
+    "order": "orderDAO.php"
+  },
+  "models": {
+    "user": {
+      "class": "User",
+      "interface": "UserDAOInterface"
+    },
+    "product": {
+      "class": "Product",
+      "interface": "ProductDAOInterface"
+    },
+    "order": {
+      "class": "Order",
+      "interface": "OrderDAOInterface"
+    }
+  },
+  "templates": {
+    "header": "/templates/header.php",
+    "footer": "/templates/footer.php",
+    "body": "/templates/body.php"
+  },
+  "utils": {
+    "db": "/utils/db.php",
+    "auth": "/utils/auth.php",
+    "search": "/utils/search.php",
+    "crud": "/utils/crud.php",
+    "globals": "/utils/globals.php",
+    "show": "/utils/show.php"
+  },
+  "routes": {
+    "/": {
+      "file": "/principais/home.php",
+      "function": "home"
+    },
+    "/search": {
+      "file": "/principais/search.php",
+      "function": "search"
+    },
+    "/profile": {
+      "file": "/principais/profile.php",
+      "function": "profile"
+    }
+  }
+}

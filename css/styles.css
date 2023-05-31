@@ -1,0 +1,26 @@
+/* Estilos para a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Estilos para imagens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+input{
+ width: 250px;
+}

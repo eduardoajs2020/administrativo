@@ -1,23 +1,46 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="StyleSheet" href="/css/styles.css">
+    <title>Cadastro de Usuários</title>
+</head>
+<div class="container">
+<div class="imagem-lateral">
+    <img src= "/assets/img/foto6.jpeg" alt="Lateral">
+</div>
 
-<form action="/src/cadastro_usuario.php" method="post">
+<div class="form-container">
 
-    <label for="nome" hidden>id:</label>
-    <input type="text" name="id" value="<?php echo $_POST['id'] ?? ''; ?>" id="id" hidden>
+    <form  action="/src/cadastro_usuario.php" method="post">
+    <h3>CADASTRO DE USUÁRIOS</h3>
+
+    <div>
+        <label for="nome" hidden>id:</label>
+        <input type="text" name="id" value="<?php echo $_POST['id'] ?? ''; ?>" id="id" hidden>
+    </div>
     
-    <label for="username">USUARIO:</label>
-    <input type="text" name="username" value="<?php echo $_POST['username'] ?? ''; ?>" id="username" >
+    <div class="menu-senha">
+        <label for="username">USUARIO:</label>
+        <input type="text" name="username" value="<?php echo $_POST['username'] ?? ''; ?>" id="username" >
+    </div>
+    
+    <div class="menu-senha">
+        <label for="senha">SENHA:</label>
+        <input type="password" name="senha" value="<?php echo $_POST['senha'] ?? ''; ?>" id="senha" >
+    </div>
+
+    <div class="menu-senha">
+        <label for="confirmasenha">CONFIRMAÇÃO DE SENHA:</label>
+        <input type="password" name="confirmasenha" value="<?php echo $_POST['confirmasenha'] ?? ''; ?>" id="confirmasenha" >
+    </div>
 
 
-    <label for="senha">SENHA:</label>
-    <input type="password" name="senha" value="<?php echo $_POST['senha'] ?? ''; ?>" id="senha" >
-
-    <label for="confirmasenha">CONFIRMAÇÃO DE SENHA:</label>
-    <input type="password" name="confirmasenha" value="<?php echo $_POST['confirmasenha'] ?? ''; ?>" id="confirmasenha" >
-
-    <br><br>
+    <div class="buttons">
     <input class="buttom" name="CadSentenca" type="submit" value="Cadastrar">
     <input class="buttom" name="AltSentenca" type="submit" value="Alterar">
     <input class="buttom" name="DelSentenca" type="submit" value="Excluir">
     <input class="buttom" name="ListaSentenca" type="submit" value="Lista Todos">
-
+    </div>
 </form>
+    </div>
+</div>
+

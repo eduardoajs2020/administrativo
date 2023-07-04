@@ -69,21 +69,25 @@ public function create($cliente_id, $valor, $modo_pagamento, $data_vencimento, $
 
     if ($result) {
 
-        echo "<table>";
-        echo "<tr>";
-        echo "<th><strong>CLIENTE</strong></th>";
-        echo "<th><strong>VALOR</strong></th>";
-        echo "<th><strong>MODALIDADE DE PAGAMENTO</strong></th>";
-        echo "<th><strong>VENCIMENTO</strong></th>";
-        echo "<th><strong>PAGAMENTO</strong></th>";
-        echo "</tr>";
-
+        require_once '../cobrancas.php';
+?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        
+        <table class="cabecalho">
+        <tr>
+        <th><strong>CLIENTE</strong></th>
+        <th><strong>VALOR</strong></th>
+        <th><strong>MODALIDADE DE PAGAMENTO</strong></th>
+        <th><strong>VENCIMENTO</strong></th>
+        <th><strong>PAGAMENTO</strong></th>
+        </tr>
+<?php
         foreach ($result as $row) {
 
             $cliente_id = $row['cliente_id'];
             $valor = $row['valor'];
             $modo_pagamento = $row['modo_pagamento'];
-            $data_vencimento = $row['vencimento'];
+            $data_vencimento = $row['data_vencimento'];
             $data_pagamento= $row['data_pagamento'];
 
             echo "<tr>";
@@ -110,16 +114,17 @@ public function create($cliente_id, $valor, $modo_pagamento, $data_vencimento, $
     // Lógica para atualizar um registro no banco de dados
 
     $sql = "UPDATE cobrancas SET
-                                valor = :valor
+                                cliente_id = :cliente_id
+                              , valor = :valor
                               , modo_pagamento = :modo_pagamento
                               , data_vencimento = :data_vencimento
-                              , data_pagamento = : data_pagamento
+                              , data_pagamento = :data_pagamento
 
                               WHERE id = :id";
 
     $stmt = $this->connection->prepare($sql);
 
-    //$stmt->bindParam(":cliente_id", $cliente_id);
+    $stmt->bindParam(":cliente_id", $cliente_id);
 
     $stmt->bindParam(":valor", $valor);
 
@@ -128,6 +133,8 @@ public function create($cliente_id, $valor, $modo_pagamento, $data_vencimento, $
     $stmt->bindParam(":data_vencimento", $data_vencimento);
 
     $stmt->bindParam(":data_pagamento", $data_pagamento);
+
+    //$stmt->bindParam(':id', $id);
 
     if ($stmt->execute()) {
 

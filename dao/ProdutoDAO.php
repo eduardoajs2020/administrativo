@@ -64,16 +64,19 @@ public function create($nome, $descricao, $preco, $data_lancamento) {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($result) {
-
-        echo "<table>";
-        echo "<tr>";
-        echo "<th><strong>NUMERO</strong></th>";
-        echo "<th><strong>NOME</strong></th>";
-        echo "<th><strong>DESCRIÇÃO</strong></th>";
-        echo "<th><strong>PREÇO</strong></th>";
-        echo "<th><strong>DATA LANÇAMENTO</strong></th>";
-        echo "</tr>";
-
+        require_once '../produtos.php';
+?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        
+        <table class="cabecalho">
+        <tr>
+        <th><strong>NUMERO</strong></th>
+        <th><strong>NOME</strong></th>
+        <th><strong>DESCRIÇÃO</strong></th>
+        <th><strong>PREÇO</strong></th>
+        <th><strong>DATA LANÇAMENTO</strong></th>
+        </tr>
+<?php
         foreach ($result as $row) {
 
             $id = $row['id'];

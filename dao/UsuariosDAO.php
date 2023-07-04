@@ -58,27 +58,32 @@ public function create($username, $password) {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($result) {
-
-        echo "<table>";
-        echo "<tr>";
-        echo "<th><strong>NUMERO</strong></th>";
-        echo "<th><strong>USUARIO</strong></th>";
-        echo "</tr>";
-
+       
+        require_once '../usuarios.php';
+?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        
+        <table class="cabecalho">
+        <tr>
+        <th><strong>NUMERO</strong></th>
+        <th><strong>USUARIO</strong></th>
+        </tr>
+<?php
         foreach ($result as $row) {
 
             $id = $row['id'];
             $username = $row['username'];
             $password = $row['password'];
-
+?>
+<?php
             echo "<tr>";
             echo "<td>$id</td>";
             echo "<td>$username</td>";
             echo "</tr>";
         }
-
-        echo "</table>";
-
+?>
+         </table class="cabecalho">
+<?php
     } else {
 
         return null;

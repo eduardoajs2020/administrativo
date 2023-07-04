@@ -65,15 +65,19 @@ public function create($tipo, $valor, $data, $descricao) {
 
     if ($result) {
 
-        echo "<table>";
-        echo "<tr>";
-        echo "<th><strong>NUMERO</strong></th>";
-        echo "<th><strong>TIPO</strong></th>";
-        echo "<th><strong>VALOR</strong></th>";
-        echo "<th><strong>DATA</strong></th>";
-        echo "<th><strong>DESCRIÇÃO</strong></th>";
-        echo "</tr>";
-
+        require_once '../fluxo_caixa.php';
+?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        
+        <table class="cabecalho">
+        <tr>
+        <th><strong>NUMERO</strong></th>
+        <th><strong>TIPO</strong></th>
+        <th><strong>VALOR</strong></th>
+        <th><strong>DATA</strong></th>
+        <th><strong>DESCRIÇÃO</strong></th>
+        </tr>
+<?php
         foreach ($result as $row) {
 
             $id = $row['id'];

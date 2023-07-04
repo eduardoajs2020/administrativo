@@ -67,17 +67,20 @@ public function create($id, $nome, $cnpj, $email, $telefone, $endereco) {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($result) {
-
-        echo "<table>";
-        echo "<tr>";
-        echo "<th><strong>NUMERO</strong></th>";
-        echo "<th><strong>NOME</strong></th>";
-        echo "<th><strong>CNPJ</strong></th>";
-        echo "<th><strong>EMAIL</strong></th>";
-        echo "<th><strong>TELEFONE</strong></th>";
-        echo "<th><strong>ENDEREÇO</strong></th>";
-        echo "</tr>";
-
+        require_once '../fornecedor.php';
+?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        
+        <table class="cabecalho">
+        <tr>
+        <th><strong>NUMERO</strong></th>
+        <th><strong>NOME</strong></th>
+        <th><strong>CNPJ</strong></th>
+        <th><strong>EMAIL</strong></th>
+        <th><strong>TELEFONE</strong></th>
+        <th><strong>ENDEREÇO</strong></th>
+        </tr>
+<?php
         foreach ($result as $row) {
 
             $id = $row['id'];

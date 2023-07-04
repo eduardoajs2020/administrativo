@@ -1,28 +1,56 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="StyleSheet" href="/css/styles.css">
+    <title>Clientes PF</title>
+</head>
+<div class="container">
+<div class="imagem-lateral">
+    <img src= "/assets/img/foto6.jpeg" alt="Lateral">
+</div>
+
+<div class="form-container">
 
 <form action="/src/cadastro_clientes.php" method="post">
 
-    <label for="nome">id:</label>
-    <input type="text" name="id" value="<?php echo $_POST['id'] ?? ''; ?>" id="id" >
+    <h3>CLIENTE PF</h3>
+
+    <div class="form-cliente-pf">
+        <label for="nome" hidden>id:</label>
+        <input type="text" name="id" value="<?php echo $_POST['id'] ?? ''; ?>" id="id" hidden>
+    </div>
     
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" value="<?php echo $_POST['nome'] ?? ''; ?>" id="nome" >
+    <div class="form-cliente-pf">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="<?php echo $_POST['nome'] ?? ''; ?>" id="nome" >
+    </div>
+    
+    <div class="form-cliente-pf">
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" value="<?php echo $_POST['cpf'] ?? ''; ?>" id="cpf" >
+    </div>
+    
+    <div class="form-cliente-pf">
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" value="<?php echo $_POST['email'] ?? ''; ?>" id="email" >
+    </div>
+    
+    <div class="form-cliente-pf">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" name="telefone" value="<?php echo $_POST['telefone'] ?? ''; ?>" id="telefone" >
+    </div>
+    
+    <div class="form-cliente-pf">
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" value="<?php echo $_POST['endereco'] ?? ''; ?>" id="endereco" >
+    </div>
+    
 
-    <label for="cpf">CPF:</label>
-    <input type="text" name="cpf" value="<?php echo $_POST['cpf'] ?? ''; ?>" id="cpf" >
-
-    <label for="email">E-mail:</label>
-    <input type="email" name="email" value="<?php echo $_POST['email'] ?? ''; ?>" id="email" >
-
-    <label for="telefone">Telefone:</label>
-    <input type="tel" name="telefone" value="<?php echo $_POST['telefone'] ?? ''; ?>" id="telefone" >
-
-    <label for="endereco">Endereço:</label>
-    <input type="text" name="endereco" value="<?php echo $_POST['endereco'] ?? ''; ?>" id="endereco" >
-
-    <br><br>
+    <div class="buttons">
     <input class="buttom" name="CadSentenca" type="submit" value="Cadastrar">
     <input class="buttom" name="AltSentenca" type="submit" value="Alterar">
     <input class="buttom" name="DelSentenca" type="submit" value="Excluir">
     <input class="buttom" name="ListaSentenca" type="submit" value="Lista Todas">
-
+    </div>
 </form>
+    </div>
+</div>

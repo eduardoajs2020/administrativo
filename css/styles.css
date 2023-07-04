@@ -1,26 +1,239 @@
-/* Estilos para a página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+/* Estilos para a área de trabalho */
+body{
+  background-color: #29999205;
 }
 
-h1,
-h2,
-h3 {
-    font-weight: bold;
-    margin-top: 0;
+.desktop {
+  background-color: #f2f2f2;
+  padding: 15px;
 }
 
-p {
-    margin-bottom: 1em;
+/* Estilos para a barra de busca */
+.search-bar {
+  background-image: url('/assets/img/icons8_menu_rounded_48.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-bottom: 20px;
 }
 
-/* Estilos para imagens */
-img {
-    max-width: 100%;
-    height: auto;
+.search-input {
+  width: 300px;
+  padding: 8px;
 }
+
+.search-button {
+  padding: 8px 16px;
+  background: linear-gradient( #22227299, #299992, #212);
+  border: none;
+  color: white;
+}
+
+/* Estilos para os ícones/link */
+.desktop-icons {
+  background: linear-gradient( #22227299, #299992, #212);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.desktop-icons a {
+  background: linear-gradient( #22227299, #299992, #212);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  margin-right: 5%;
+  margin-left: 60px;
+  margin-bottom: 40px;
+  width: 200px;
+  height: 200px;
+  text-decoration: none;
+  color: #f2f2f2;
+  font-size: 26px;
+  padding: 2px;
+}
+
+.desktop-icons a img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  padding: 20px;
+}
+
+.container{
+  display:flex;
+}
+
+.form-container{
+  background: linear-gradient( #22227299, #299992, #212);
+  border-radius:0 10px 10px 0;
+  width: 700px;
+  height: auto;
+  margin-left: auto;
+  text-decoration: none;
+  color: #f2f2f2;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.buttom{
+  display: inline-block;
+  background-color:#299992;
+  color: #f2f2f2;
+  margin: 20px 30px 20px 20px;
+  width: 120px;
+  font-size: 20px;
+}
+
+.buttom a:hover{
+  background-color: mediumblue;
+}
+
 input{
- width: 250px;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+textarea{
+  background-color: transparent;
+}
+
+.buttons{
+  display: inline-block;
+  margin: 10px auto;
+}
+
+table{
+  font-size: 20px;
+  color: #29999233;
+  margin: 10px;
+  padding: 15px;
+  padding-left: 40px;
+  border-collapse: collapse;
+  width: 99%;
+}
+
+td{
+  text-align: left;
+  padding: 8px;
+  margin: 20px;
+}
+
+th {
+  background:linear-gradient( #22227299, #299992, #212);
+  color: aliceblue;
+  text-align: left;
+  padding: 8px;
+  margin: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: gainsboro;
+}
+
+.cabecalho{
+  background-color: #51515166;
+  color: navy;
+  border-radius: 5px;
+}
+
+.menu-senha{
+  padding: 10px;
+  margin-left: 185px;
+  margin-right: 185px;
+}
+
+.imagem-lateral{
+  width:300px;
+  padding: 0;
+  margin: auto;
+  margin-left: 10px;
+  
+}
+
+.datas-container{
+  display: flex;
+  background-color: transparent;
+}
+
+.datas-individuais{
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  padding: auto;
+}
+
+.form-input-caixa{
+  background-color: transparent;
+  font-size:20px;
+  width: 500px;
+  margin-bottom: 20px;
+  bottom: 20px;
+  margin-left: 90px;
+  margin-right: 60px;
+}
+
+.form-input-caixa-1{
+  font-size:20px;
+  width: 300px;
+  margin-bottom: 20px;
+  bottom: 20px;
+  margin-left: 90px;
+  margin-right: 60px;
+}
+
+.form-cad-produtos{
+  margin-bottom: auto;
+  margin-left: 100px;
+  margin-right: 80px;
+  bottom: 10px;
+}
+
+.form-cad-produtos-1{
+  width: 200px;
+  margin-bottom: auto;
+  margin-left: 100px;
+}
+
+.form-fornecedor{
+  width: 500px;
+  margin-left: 100px;
+  margin-right: 40px;
+  margin-bottom: auto;
+}
+
+.form-cobrancas{
+  background-color: transparent;
+  font-size:20px;
+  width: 500px;
+  margin-bottom: 10px;
+  bottom: 20px;
+  margin-left: 90px;
+  margin-right: 60px;
+}
+
+.form-cobranca-pagamento {
+  display: inline;
+}
+
+select{
+  font-size:20px;
+}
+
+.form-cliente-pf{
+  font-size:24px;
+  width: 500px;
+  margin-bottom: auto;
+  margin-left: 90px;
+  margin-right: 60px;
 }

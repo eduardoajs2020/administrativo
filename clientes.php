@@ -13,6 +13,10 @@
 <form action="/src/cadastro_clientes.php" method="post">
 
     <h3>CLIENTE PF</h3>
+    
+    <div  class="buttom-icon">
+       <a href="../../index.php" ><img src= "/assets/img/icons8_menu_32.png" alt="botton"></a> 
+    </div>
 
     <div class="form-cliente-pf">
         <label for="nome" hidden>id:</label>

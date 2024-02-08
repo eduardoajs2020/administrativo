@@ -14,6 +14,10 @@
 <form action="/src/cadastro_fornecedor.php" method="post">
 
     <h3>CADASTRO DE FORNECEDOR</h3>
+
+    <div  class="buttom-icon">
+       <a href="../../index.php" ><img src= "/assets/img/icons8_menu_32.png" alt="botton"></a> 
+    </div>
     
     <div class="form-fornecedor">
         <label for="nome" hidden>id:</label>

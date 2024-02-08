@@ -1,6 +1,7 @@
 /* Estilos para a área de trabalho */
 body{
-  background-color: #29999205;
+  /*background-color: #299992;*/
+  background: linear-gradient( #22227299, #299992, #212);
 }
 
 .desktop {
@@ -79,7 +80,7 @@ body{
 
 .buttom{
   display: inline-block;
-  background-color:#299992;
+  background-color:transparent;
   color: #f2f2f2;
   margin: 20px 30px 20px 20px;
   width: 120px;
@@ -87,7 +88,7 @@ body{
 }
 
 .buttom a:hover{
-  background-color: mediumblue;
+  background-color: #000;
 }
 
 input{
@@ -142,8 +143,8 @@ tr:nth-child(even) {
 }
 
 .cabecalho{
-  background-color: #51515166;
-  color: navy;
+  background-color: #51515133;
+  color: orangered;
   border-radius: 5px;
 }
 
@@ -236,4 +237,11 @@ select{
   margin-bottom: auto;
   margin-left: 90px;
   margin-right: 60px;
+}
+
+.buttom-icon{
+  margin-left: 620px;
+  margin-top: -60px;
+  margin-bottom: 20px;
+
 }

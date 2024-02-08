@@ -40,8 +40,16 @@ public function create($nome, $descricao, $preco, $data_lancamento) {
     $stmt->bindParam(":data_lancamento", $data_lancamento);
 
     if ($stmt->execute()) {
-
-        echo "Produto cadastrado com sucesso!";
+?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        <table class="cabecalho">
+        <tr>
+        <th><strong>Produto cadastrado com sucesso!</strong></th>
+        <br>
+        <th><button><a href="../produtos.php">Retornar</a></button></th>
+        </tr>
+        </table>
+<?php
 
     } else {
 
@@ -128,7 +136,17 @@ public function create($nome, $descricao, $preco, $data_lancamento) {
 
     if ($stmt->execute()) {
 
-        echo "Produto atualizado com sucesso!";
+    ?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        <table class="cabecalho">
+        <tr>
+        <th><strong>Produto Atualizado com sucesso!</strong></th>
+        <br>
+        <th><button><a href="../produtos.php">Retornar</a></button></th>
+        </tr>
+        </table>
+<?php
+
 
     } else {
 
@@ -149,7 +167,16 @@ public function create($nome, $descricao, $preco, $data_lancamento) {
 
         if ($stmt->execute()) {
 
-        echo " Produto deletado com sucesso!";
+?>
+        <link rel="StyleSheet" href="/css/styles.css">
+        <table class="cabecalho">
+        <tr>
+        <th><strong>Produto excluído com sucesso!</strong></th>
+        <br>
+        <th><button><a href="../produtos.php">Retornar</a></button></th>
+        </tr>
+        </table>
+<?php
 
     } else {
         

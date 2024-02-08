@@ -11,7 +11,12 @@
 <div class="form-container">
 
     <form  action="/src/cadastro_usuario.php" method="post">
+
     <h3>CADASTRO DE USUÁRIOS</h3>
+
+    <div  class="buttom-icon">
+       <a href="../../index.php" ><img src= "/assets/img/icons8_menu_32.png" alt="botton"></a> 
+    </div>
 
     <div>
         <label for="nome" hidden>id:</label>

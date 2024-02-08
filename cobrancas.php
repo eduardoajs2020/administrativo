@@ -15,6 +15,10 @@
 
     <h3>COBRANÇA</h3>
 
+    <div  class="buttom-icon">
+       <a href="../../index.php" ><img src= "/assets/img/icons8_menu_32.png" alt="botton"></a> 
+    </div>
+
 <div class="form-cobrancas">
     <label for="nome" hidden>id:</label>
     <input type="text" name="id" value="<?php echo $_POST['id'] ?? ''; ?>" id="id" hidden>
@@ -38,6 +42,8 @@
 <div class="form-cobrancas">
 
    <h4>SELECIONE A FORMA DE PAGAMENTO</h4>
+
+   
 
   <!--form id="paymentForm" action="" method="post"-->
   <div class="form-cobranca-pagamento">

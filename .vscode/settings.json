@@ -99,5 +99,6 @@
         "usuarios",
         "Usuários",
         "vencimento"
-    ]
+    ],
+    "iis.configDir": ""
 }
